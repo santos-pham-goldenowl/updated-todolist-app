@@ -1,0 +1,51 @@
+// module.exports = {
+//   env: {
+//     browser: true,
+//     es2020: true,
+//   },
+//   extends: ["eslint:recommended", "plugin:react/recommended"],
+//   parserOptions: {
+//     ecmaFeatures: {
+//       jsx: true,
+//       module: true,
+//       experimentalObjectRestSpread: true,
+//     },
+//     ecmaVersion: 11,
+//     sourceType: "module",
+//   },
+//   parser: "babel-eslint",
+//   plugins: ["react"],
+//   rules: {
+//     eqeqeq: 1,
+//     semi: ["error", "always"],
+//     quotes: ["warn", "double"],
+//   },
+// };
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "module": true,
+      "experimentalObjectRestSpread": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": ["react"],
+  "rules": {
+    "eqeqeq": 1,
+    "semi": ["error", "always"],
+    "quotes": ["warn", "double"],
+    "no-unused-vars": [0],
+    "react/destructuring-assignment": [0],
+    "react/prefer-stateless-function": [0],
+    "react/prop-types": [0],
+    "no-console": [0]
+  }
+}
