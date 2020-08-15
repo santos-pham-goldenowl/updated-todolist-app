@@ -184,7 +184,7 @@ class TodoListContainer extends React.Component {
                 type="text"
                 className="input"
                 placeholder="What need to be done?"
-                name="email"
+                // name="email"
                 onKeyDown={this.addItem}
               />
             </div>
