@@ -29,7 +29,7 @@ class SignUp extends React.Component {
           return errors;
         }}
         //onSubmit (Sign up)
-        onSubmit={(values) => {
+        onSubmit={(values, { setSubmitting }) => {
           console.log("Sign up");
           fb.auth()
             .createUserWithEmailAndPassword(values.email, values.password)
@@ -37,6 +37,8 @@ class SignUp extends React.Component {
               window.location = "/login";
             })
             .catch((error) => {
+              // resetForm(initialValues);
+              setSubmitting(false);
               this.setState({
                 errAuth: "The email has already existed",
               });

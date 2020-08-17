@@ -13,26 +13,6 @@ class LoginPage extends React.Component {
     };
   }
 
-  handleLogin = ({ email, password }) => {
-    console.log(email);
-    console.log(password);
-    fb.auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((user) => {
-        console.log("login success");
-        this.props.login();
-        // history.replace("/todolist");
-        window.location = "/todolist";
-      })
-      .catch((e) => {
-        console.log("e: ", e);
-        // this.setState({
-        //   error: "Error! Your account or password is not correct.",
-        // });
-        // window.location.reload();
-        console.log("??????");
-      });
-  };
   // let history = useHistory();
   // let location = useLocation();
   // let { from } = location.state || { from: { pathname: "/" } };
@@ -57,8 +37,23 @@ class LoginPage extends React.Component {
               return errors;
             }}
             //onSubmit (Sign in)
-            onSubmit={(values) => {
-              this.handleLogin(values);
+            onSubmit={(values, { setSubmitting }) => {
+              const { email, password } = values;
+              console.log(values);
+              fb.auth()
+                .signInWithEmailAndPassword(email, password)
+                .then((user) => {
+                  console.log("login success");
+                  this.props.login();
+                  // history.replace("/todolist");
+                  window.location = "/todolist";
+                })
+                .catch((e) => {
+                  setSubmitting(false);
+                  this.setState({
+                    error: "Error! Your account or password is not correct.",
+                  });
+                });
             }}
           >
             {({
