@@ -1,7 +1,7 @@
 import React from "react";
 import * as Sentry from "@sentry/react";
 
-import TodoContainer from "./Container Component/TodoContainer";
+import TodoContainer from "./Container/NavbarContainer";
 
 Sentry.init({ dsn: "https://examplePublicKey@o0.ingest.sentry.io/0" });
 function FallbackComponent() {

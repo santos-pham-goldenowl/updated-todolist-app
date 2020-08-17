@@ -9,10 +9,10 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import TodoItemContainer from "../Container Component/TodoItemContainer";
-import Home from "../pages/Home";
-import SignUp from "../pages/Signup";
-import LoginPage from "../pages/Login";
+import TodoItemContainer from "../Container/TodoItemContainer";
+import Home from "../Container/Home";
+import SignUp from "../Container/Signup";
+import LoginPage from "../Container/Login";
 
 class TodoPresentational extends React.Component {
   render() {
